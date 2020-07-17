@@ -66,10 +66,6 @@ body {
     width: 50%;
 }
 
-.displayBox {
-    
-}
-
 .display {
     background-color: white;
     height: 15%;
@@ -80,6 +76,7 @@ body {
     font-family: 'Orbitron', sans-serif;
     font-size: 5rem;
     text-align: right;
+    line-height: 100px;
 
 }
 
