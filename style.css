@@ -62,6 +62,15 @@ body {
 
 .calculator {
     background-color: grey;
-    height: 50%;
+    height: 75%;
     width: 50%;
+}
+
+.display {
+    background-color: white;
+    height: 15%;
+    width: 90%;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
 }
