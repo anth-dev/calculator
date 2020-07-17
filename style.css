@@ -49,6 +49,16 @@ table {
 
 /* End of CSS reset */
 
+html, body {
+    height: 100%;
+}
+
 body {
     background-color: beige;
+}
+
+.calculator {
+    background-color: grey;
+    height: 50%;
+    width: 50%;
 }
