@@ -55,6 +55,9 @@ html, body {
 
 body {
     background-color: beige;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .calculator {
