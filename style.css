@@ -54,14 +54,14 @@ html, body {
 }
 
 body {
-    background-color: beige;
+    background-color: rgba(73, 0, 255, 1);
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .calculator {
-    background-color: grey;
+    background-color: rgba(255, 0, 193, 1);
     height: 75%;
     width: 50%;
 }
@@ -73,8 +73,8 @@ body {
     margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 5rem;
+    font-family: 'VT323', monospace;
+    font-size: 7rem;
     text-align: right;
     line-height: 100px;
 }
@@ -99,4 +99,12 @@ body {
     border-color: darkslategrey;
     border-width: 2px;
     margin: 5px;
+}
+
+.light {
+    background-color: rgba(0, 255, 249, 1);
+}
+
+.dark {
+    background-color: rgba(0, 184, 255, 1);
 }
