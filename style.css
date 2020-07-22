@@ -81,8 +81,13 @@ body {
 }
 
 .buttonBox {
-    border: red 2px;
+    display: flex;
+    flex-direction: column;
     margin-left: auto;
     margin-right: auto;
     height: 85%;
+}
+
+.row {
+    display: flex;
 }
