@@ -99,6 +99,8 @@ body {
     border-color: darkslategrey;
     border-width: 2px;
     margin: 5px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 2rem;
 }
 
 .light {
