@@ -1,2 +1,2 @@
 # calculator
-My calculator for The Odin Project
+My calculator for The Odin Project.
