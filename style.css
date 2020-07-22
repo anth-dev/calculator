@@ -83,9 +83,6 @@ body {
 .buttonBox {
     display: flex;
     flex-direction: column;
-    margin-left: auto;
-    margin-right: auto;
-    height: 85%;
 }
 
 .row {
@@ -98,4 +95,8 @@ body {
     flex-grow: 1;
     align-items: center;
     justify-content: center;
+    border-style: outset;
+    border-color: darkslategrey;
+    border-width: 2px;
+    margin: 5px;
 }
