@@ -70,19 +70,19 @@ body {
     background-color: white;
     height: 15%;
     width: 90%;
-    margin-top: 5%;
+    margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
     font-family: 'Orbitron', sans-serif;
     font-size: 5rem;
     text-align: right;
     line-height: 100px;
-
 }
 
 .buttonBox {
     display: flex;
     flex-direction: column;
+    height: 85%;
 }
 
 .row {
