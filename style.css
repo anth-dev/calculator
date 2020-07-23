@@ -62,8 +62,8 @@ body {
 
 .calculator {
     background-color: rgba(255, 0, 193, 1);
-    height: 75%;
-    width: 50%;
+    height: 75vh;
+    width: 50vh;
     display: flex;
     flex-direction: column;
 }
@@ -75,7 +75,8 @@ body {
     background-color: white;
     margin: 5px;
     font-family: 'VT323', monospace;
-    font-size: 10vh;
+    font-size: 12vh;
+    line-height: 50%;
     border-style: inset;
     border-width: 4px;
     align-items: center;
