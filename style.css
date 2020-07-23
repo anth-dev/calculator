@@ -69,14 +69,16 @@ body {
 }
 
 .display {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row-reverse;
     background-color: white;
     margin: 5px;
     font-family: 'VT323', monospace;
     font-size: 5rem;
-    text-align: right;
-    flex-grow: 1;
     border-style: inset;
     border-width: 4px;
+    align-items: center;
 }
 
 /* .buttonBox {
