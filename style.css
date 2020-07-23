@@ -54,7 +54,7 @@ html, body {
 }
 
 body {
-    background-color: rgba(5, 255, 161, 1);
+    background-image: linear-gradient(to top right, rgba(100, 149, 237, 1), rgba(5, 255, 161, 1));
     display: flex;
     justify-content: center;
     align-items: center;
