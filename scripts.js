@@ -5,6 +5,12 @@ buttons.forEach(button => button.addEventListener('mousedown', function() {
 buttons.forEach(button => button.addEventListener('mouseup', function() {
     button.classList.remove("down");
 }));
+buttons.forEach(button => button.addEventListener('touchstart', function() {
+    button.classList.add("down");
+}));
+buttons.forEach(button => button.addEventListener('touchend', function() {
+    button.classList.remove("down");
+}));
 
 function add (a, b) {
     return a + b;
