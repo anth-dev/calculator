@@ -31,10 +31,29 @@ function divide (a ,b) {
     return a / b;
 }
 
+function operate (a, b, operation) {
+    switch(operation) {
+        case add:
+            return add(a, b);
+            break;
+        case subtract:
+            return subtract(a, b);
+            break;
+        case multiply:
+            return multiply(a, b);
+            break;
+        case divide:
+            return divide(a, b);
+            break;
+    }
+}
+
 // code below is for jasmine testing
+
 // module.exports = {
 //     add: add,
 //     subtract: subtract,
 //     multiply: multiply,
 //     divide: divide,
+//     operate: operate,
 // };

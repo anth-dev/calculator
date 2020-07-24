@@ -43,13 +43,13 @@ describe('operate', function() {
     it('works for adding', function() {
         expect(operate(5, 5, add)).toEqual(10);
     });
-    xit('works for subtracting', function() {
+    it('works for subtracting', function() {
         expect(operate(42, 22, subtract)).toEqual(20);
     });
-    xit('works for multiplying', function() {
+    it('works for multiplying', function() {
         expect(operate(3, 3, multiply)).toEqual(9);
     });
-    xit('works for dividing', function() {
+    it('works for dividing', function() {
         expect(operate(27, 3, divide)).toEqual(9);
-    })
+    });
 });
