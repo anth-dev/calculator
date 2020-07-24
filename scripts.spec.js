@@ -1,4 +1,4 @@
-const { add, subtract, multiply } = require('./scripts');
+const { add, subtract, multiply, divide } = require('./scripts');
 
 describe('add', function() {
     it('adds integers', function() {
@@ -27,5 +27,14 @@ describe('multiply', function() {
     });
     it('works with decimals', function() {
         expect(multiply(100, .25)).toEqual(25);
+    });
+})
+
+describe('divide', function() {
+    it('divides integers', function() {
+        expect(divide(100, 4)).toEqual(25);
+    });
+    it('divides decimals', function() {
+        expect(divide(10, .5)).toEqual(20);
     });
 })

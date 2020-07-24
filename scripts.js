@@ -27,8 +27,14 @@ function multiply (a ,b) {
     return a * b;
 }
 
+function divide (a ,b) {
+    return a / b;
+}
+
+// code below is for jasmine testing
 // module.exports = {
 //     add: add,
 //     subtract: subtract,
-//     multiply: multiply
+//     multiply: multiply,
+//     divide: divide,
 // };
