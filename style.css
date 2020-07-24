@@ -113,3 +113,12 @@ button {
 .down {
     border-style: inset;
 }
+
+.overlay {
+    position: fixed;
+    bottom: 8px;
+    right: 30px;
+    font-family: 'Lobster', cursive;
+    color: white;
+    font-size: 5vh;
+}
