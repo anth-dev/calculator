@@ -1,6 +1,9 @@
+let input = [];
 let buttons = document.querySelectorAll('button');
 buttons.forEach(button => button.addEventListener('mousedown', function() {
     button.classList.add("down");
+    input.push(this.textContent);
+    updateDisplay(input);
 }));
 buttons.forEach(button => button.addEventListener('mouseup', function() {
     button.classList.remove("down");
@@ -14,6 +17,8 @@ buttons.forEach(button => button.addEventListener('touchstart', function() {
 buttons.forEach(button => button.addEventListener('touchend', function() {
     button.classList.remove("down");
 }));
+
+let display = document.querySelector('.display');
 
 function add (a, b) {
     return a + b;
@@ -46,6 +51,11 @@ function operate (a, b, operation) {
             return divide(a, b);
             break;
     }
+}
+
+function updateDisplay (array) {
+    let content = array.join('');
+    display.textContent = content;
 }
 
 // code below is for jasmine testing
