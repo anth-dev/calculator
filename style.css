@@ -88,7 +88,7 @@ body {
     flex-grow: 1;
 }
 
-.button {
+button {
     display: flex;
     flex-grow: 1;
     align-items: center;
@@ -107,4 +107,8 @@ body {
 
 .dark {
     background-color: rgba(0, 184, 255, 1);
+}
+
+.down {
+    border-style: inset;
 }
