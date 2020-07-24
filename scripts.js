@@ -1,5 +1,10 @@
 let buttons = document.querySelectorAll('button');
-buttons.forEach(button => button.addEventListener('click', console.log('clicked')));
+buttons.forEach(button => button.addEventListener('mousedown', function() {
+    button.classList.add("down");
+}));
+buttons.forEach(button => button.addEventListener('mouseup', function() {
+    button.classList.remove("down");
+}));
 
 function add (a, b) {
     return a + b;

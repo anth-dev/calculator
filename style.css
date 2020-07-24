@@ -99,6 +99,7 @@ button {
     margin: 5px;
     font-family: 'Roboto Mono', monospace;
     font-size: 5vh;
+    outline: none;
 }
 
 .light {
