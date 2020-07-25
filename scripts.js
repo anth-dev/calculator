@@ -3,7 +3,12 @@ let buttons = document.querySelectorAll('button');
 buttons.forEach(button => button.addEventListener('mousedown', function() {
     button.classList.add("down");
     input.push(this.textContent);
+    if (this.textContent == 'c') {
+        input = [];
+        display.textContent = '0';
+    } else {
     updateDisplay(input);
+    }
 }));
 buttons.forEach(button => button.addEventListener('mouseup', function() {
     button.classList.remove("down");
