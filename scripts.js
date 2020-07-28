@@ -1,10 +1,13 @@
 let input = [];
 let buttons = document.querySelectorAll('button');
 buttons.forEach(button => button.addEventListener('mousedown', function() {
+    console.log(this);
     button.classList.add("down");
     if (this.textContent == 'c') {
         input = [];
         display.textContent = '0';
+    } else if (this.classList.contains("operator") == true) {
+        console.log("we have an operator");
     } else {
     input.push(this.textContent);
     updateDisplay(input);
