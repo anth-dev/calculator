@@ -2,11 +2,11 @@ let input = [];
 let buttons = document.querySelectorAll('button');
 buttons.forEach(button => button.addEventListener('mousedown', function() {
     button.classList.add("down");
-    input.push(this.textContent);
     if (this.textContent == 'c') {
         input = [];
         display.textContent = '0';
     } else {
+    input.push(this.textContent);
     updateDisplay(input);
     }
 }));
@@ -29,15 +29,15 @@ function add (a, b) {
     return a + b;
 }
 
-function subtract (a ,b) {
+function subtract (a, b) {
     return a - b;
 }
 
-function multiply (a ,b) {
+function multiply (a, b) {
     return a * b;
 }
 
-function divide (a ,b) {
+function divide (a, b) {
     return a / b;
 }
 
