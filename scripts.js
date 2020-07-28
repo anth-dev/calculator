@@ -1,13 +1,14 @@
 let input = [];
 let buttons = document.querySelectorAll('button');
+let display = document.querySelector('.display');
+
 buttons.forEach(button => button.addEventListener('mousedown', function() {
-    console.log(this);
     button.classList.add("down");
     if (this.textContent == 'c') {
         input = [];
         display.textContent = '0';
     } else if (this.classList.contains("operator") == true) {
-        console.log("we have an operator");
+        console.log(input);
     } else {
     input.push(this.textContent);
     updateDisplay(input);
@@ -25,8 +26,6 @@ buttons.forEach(button => button.addEventListener('touchstart', function() {
 buttons.forEach(button => button.addEventListener('touchend', function() {
     button.classList.remove("down");
 }));
-
-let display = document.querySelector('.display');
 
 function add (a, b) {
     return a + b;
