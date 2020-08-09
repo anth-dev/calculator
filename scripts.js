@@ -4,6 +4,7 @@ let display = document.querySelector('.display');
 let a;
 let b;
 let operator;
+let answer;
 
 buttons.forEach(button => button.addEventListener('mousedown', function() {
     button.classList.add("down");
@@ -11,15 +12,16 @@ buttons.forEach(button => button.addEventListener('mousedown', function() {
         clearDisplay();
     } else if (this.classList.contains("operator") == true) {
         a = input.join('');
-        console.log(a);
+        console.log('a is saved as ' + a);
         // store operator in operator variable
-        operator = this.textContent;
-        console.log(operator);
+        operator = this.dataset.operation;
+        console.log('operator saved as ' + operator);
         clearDisplay();
     } else if (this.classList.contains("equals") == true) {
         b = input.join('');
-        console.log(b);
-        clearDisplay();
+        console.log('b is saved as ' + b);
+        // clearDisplay();
+        operate(a, b, operator);
     } else {
     input.push(this.textContent);
     updateDisplay(input);
@@ -39,6 +41,7 @@ buttons.forEach(button => button.addEventListener('touchend', function() {
 }));
 
 function add (a, b) {
+    console.log('add function has been called');
     return a + b;
 }
 
@@ -54,9 +57,13 @@ function divide (a, b) {
     return a / b;
 }
 
-function operate (a, b, operation) {
-    switch(operation) {
+// the operate function works correctly when called from the console 
+// but it isn't currently working when called by from the equals button
+function operate (a, b, operator) {
+    console.log('operator function being called with ' + operator);
+    switch(operator) {
         case add:
+            console.log('trying to add');
             return add(a, b);
             break;
         case subtract:
