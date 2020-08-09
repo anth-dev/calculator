@@ -59,11 +59,12 @@ function divide (a, b) {
 
 // the operate function works correctly when called from the console 
 // but it isn't currently working when called by from the equals button
-function operate (a, b, operator) {
-    console.log('operator function being called with ' + operator);
-    switch(operator) {
+function operate (a, b, operation) {
+    // console.log(operation)
+    console.log('operator function being called with ' + operation);
+    switch(operation) {
         case add:
-            console.log('trying to add');
+            console.log('the operator function is trying to add');
             return add(a, b);
             break;
         case subtract:
