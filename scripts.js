@@ -3,6 +3,7 @@ let buttons = document.querySelectorAll('button');
 let display = document.querySelector('.display');
 let a;
 let b;
+let operator;
 
 buttons.forEach(button => button.addEventListener('mousedown', function() {
     button.classList.add("down");
@@ -11,6 +12,9 @@ buttons.forEach(button => button.addEventListener('mousedown', function() {
     } else if (this.classList.contains("operator") == true) {
         a = input.join('');
         console.log(a);
+        // store operator in operator variable
+        operator = this.textContent;
+        console.log(operator);
         clearDisplay();
     } else if (this.classList.contains("equals") == true) {
         b = input.join('');
