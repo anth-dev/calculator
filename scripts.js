@@ -1,14 +1,20 @@
 let input = [];
 let buttons = document.querySelectorAll('button');
 let display = document.querySelector('.display');
+let a;
+let b;
 
 buttons.forEach(button => button.addEventListener('mousedown', function() {
     button.classList.add("down");
     if (this.textContent == 'c') {
-        input = [];
-        display.textContent = '0';
+        clearDisplay();
     } else if (this.classList.contains("operator") == true) {
         console.log(input);
+        a = input.join('');
+        console.log(a);
+        clearDisplay();
+    } else if (this.classList.contains("equals") == true) {
+        console.log('we got equals here')
     } else {
     input.push(this.textContent);
     updateDisplay(input);
@@ -63,6 +69,11 @@ function operate (a, b, operation) {
 function updateDisplay (array) {
     let content = array.join('');
     display.textContent = content;
+}
+
+function clearDisplay () {
+    input = [];
+    display.textContent = '0';
 }
 
 // code below is for jasmine testing
