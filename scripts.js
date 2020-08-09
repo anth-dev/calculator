@@ -9,12 +9,13 @@ buttons.forEach(button => button.addEventListener('mousedown', function() {
     if (this.textContent == 'c') {
         clearDisplay();
     } else if (this.classList.contains("operator") == true) {
-        console.log(input);
         a = input.join('');
         console.log(a);
         clearDisplay();
     } else if (this.classList.contains("equals") == true) {
-        console.log('we got equals here')
+        b = input.join('');
+        console.log(b);
+        clearDisplay();
     } else {
     input.push(this.textContent);
     updateDisplay(input);
