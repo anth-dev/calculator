@@ -15,7 +15,11 @@ buttons.forEach(button => button.addEventListener('mousedown', function() {
         console.log('a is saved as ' + a);
         // store operator in operator variable
         operator = this.dataset.operation;
+<<<<<<< HEAD
         console.log('operator saved as ' + operator);
+=======
+        console.log(operator);
+>>>>>>> revert
         clearDisplay();
     } else if (this.classList.contains("equals") == true) {
         b = input.join('');
@@ -41,7 +45,11 @@ buttons.forEach(button => button.addEventListener('touchend', function() {
 }));
 
 function add (a, b) {
+<<<<<<< HEAD
     console.log('add function has been called');
+=======
+    console.log('add function is running');
+>>>>>>> revert
     return a + b;
 }
 
@@ -64,7 +72,11 @@ function operate (a, b, operation) {
     console.log('operator function being called with ' + operation);
     switch(operation) {
         case add:
+<<<<<<< HEAD
             console.log('the operator function is trying to add');
+=======
+            console.log('operate function is running');
+>>>>>>> revert
             return add(a, b);
             break;
         case subtract:
