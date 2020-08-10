@@ -13,7 +13,7 @@ buttons.forEach(button => button.addEventListener('mousedown', function() {
         a = input.join('');
         console.log(a);
         // store operator in operator variable
-        operator = this.textContent;
+        operator = this.dataset.operation;
         console.log(operator);
         clearDisplay();
     } else if (this.classList.contains("equals") == true) {
@@ -39,6 +39,7 @@ buttons.forEach(button => button.addEventListener('touchend', function() {
 }));
 
 function add (a, b) {
+    console.log('add function is running');
     return a + b;
 }
 
@@ -57,6 +58,7 @@ function divide (a, b) {
 function operate (a, b, operation) {
     switch(operation) {
         case add:
+            console.log('operate function is running');
             return add(a, b);
             break;
         case subtract:
