@@ -62,8 +62,15 @@ function divide (a, b) {
 // get stuck at the switch statement with 'operator function being called
 // with add' being the last item being logged
 //
-// if you call the function from the console [-example operate(2, 3, add);]
-// the calculator works and the answer is displayed on the screen
+// If you call the function from the console [-example operate(2, 3, add);]
+// the calculator works and the answer is displayed on the screen but there
+// is a bit of funky output to the console. For the above example instead of
+// the expected 'operator function being called with add' the output is instead
+// 'operator function being called with function add (a, b) {
+//     console.log('add function is running');
+//     answer = a + b;
+//     display.textContent = answer;
+// }' 
 //
 // if you set the a, b, and operator variables [-example a to 2, b to 3, and
 // operator to "add"] and try to run the function 
@@ -73,21 +80,7 @@ function divide (a, b) {
 // [-example operate(2, 3, operator);] with operator being the only variable
 // passed to the function
 //
-// below is why the parameters are (a, b, c) instead of (a, b, operation)
-//
-// function paramaters were previously (a, b, operation) but that was
-// causing a bug where the console.log would output the contents of the
-// function of the same name. For example, operate(a, b, operator), with
-// the operator variable containing "add" instead of logging 'operator function
-// being called with add' it would log 'operator function being called with
-//
-// function add (a, b) {
-//     console.log('add function is running');
-//     answer = a + b;
-//     display.textContent = answer;
-// }'
-//
-// or similar output
+
 
 function operate (a, b, c) {
     console.log('operator function being called with ' + c);
