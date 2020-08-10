@@ -85,9 +85,9 @@ function divide (a, b) {
 //     console.log('add function is running');
 //     answer = a + b;
 //     display.textContent = answer;
-// }
+// }'
 //
-// or similar
+// or similar output
 
 function operate (a, b, c) {
     console.log('operator function being called with ' + c);
