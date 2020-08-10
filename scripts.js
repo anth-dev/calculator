@@ -58,6 +58,9 @@ function divide (a, b) {
     return a / b;
 }
 
+// *** The following is what happens when you leave the quotes off of your
+// switch statement choices (the code is now working) ***
+//
 // when called by using the calculator gui the operate function seems to
 // get stuck at the switch statement with 'operator function being called
 // with add' being the last item being logged
@@ -89,13 +92,13 @@ function operate (a, b, c) {
             console.log('add switch case selected');
             add(+a, +b);
             break;
-        case subtract:
+        case 'subtract':
             return subtract(a, b);
             break;
-        case multiply:
+        case 'multiply':
             return multiply(a, b);
             break;
-        case divide:
+        case 'divide':
             return divide(a, b);
             break;
     }
