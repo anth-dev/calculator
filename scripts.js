@@ -85,9 +85,9 @@ function divide (a, b) {
 function operate (a, b, c) {
     console.log('operator function being called with ' + c);
     switch(c) {
-        case add:
+        case 'add':
             console.log('add switch case selected');
-            add(a, b);
+            add(+a, +b);
             break;
         case subtract:
             return subtract(a, b);
