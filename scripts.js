@@ -42,7 +42,8 @@ buttons.forEach(button => button.addEventListener('touchend', function() {
 
 function add (a, b) {
     console.log('add function is running');
-    return a + b;
+    answer = a + b;
+    display.textContent = answer;
 }
 
 function subtract (a, b) {
@@ -57,15 +58,43 @@ function divide (a, b) {
     return a / b;
 }
 
-// the operate function works correctly when called from the console 
-// but it isn't currently working when called by from the equals button
-function operate (a, b, operation) {
-    // console.log(operation)
-    console.log('operator function being called with ' + operation);
-    switch(operation) {
+// when called by using the calculator gui the operate function seems to
+// get stuck at the switch statement with 'operator function being called
+// with add' being the last item being logged
+//
+// if you call the function from the console [-example operate(2, 3, add);]
+// the calculator works and the answer is displayed on the screen
+//
+// if you set the a, b, and operator variables [-example a to 2, b to 3, and
+// operator to "add"] and try to run the function 
+// [-example operate(a, b, operator);] it gets stuck at the same point
+// as with the calculator gui with 'operator function being called
+// with add' being the last item logged... this also happens if you try
+// [-example operate(2, 3, operator);] with operator being the only variable
+// passed to the function
+//
+// below is why the parameters are (a, b, c) instead of (a, b, operation)
+//
+// function paramaters were previously (a, b, operation) but that was
+// causing a bug where the console.log would output the contents of the
+// function of the same name. For example, operate(a, b, operator), with
+// the operator variable containing "add" instead of logging 'operator function
+// being called with add' it would log 'operator function being called with
+//
+// function add (a, b) {
+//     console.log('add function is running');
+//     answer = a + b;
+//     display.textContent = answer;
+// }
+//
+// or similar
+
+function operate (a, b, c) {
+    console.log('operator function being called with ' + c);
+    switch(c) {
         case add:
-            console.log('operate function is running');
-            return add(a, b);
+            console.log('add switch case selected');
+            add(a, b);
             break;
         case subtract:
             return subtract(a, b);
