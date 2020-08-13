@@ -51,6 +51,10 @@ function divide (a, b) {
     display.textContent = a / b;
 }
 
+// iss1 - If you enter 4 + 5 the display should say 9. Then when
+// another operator is pushed it should use the previous answer
+// for 'a' allowing the chaining of operations.
+
 function operate (a, b, c) {
     switch(c) {
         case 'add':
