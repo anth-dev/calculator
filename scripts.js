@@ -4,6 +4,7 @@ let display = document.querySelector('.display');
 let a;
 let b;
 let operator;
+let answer;
 
 buttons.forEach(button => button.addEventListener('mousedown', function() {
     button.classList.add("down");
@@ -12,7 +13,12 @@ buttons.forEach(button => button.addEventListener('mousedown', function() {
         operator = '';
     } else if (this.classList.contains("operator") == true) {
         if (operator) {
-            console.log('We have an operator over here!');
+            console.log('We have a second operator over here!');
+            // operate
+            b = input.join('');
+            operate(a, b, operator);
+            // display the answer and store in variable 'a'
+            a = answer;
         } else {
         a = input.join('');
         // store operator in operator variable
@@ -42,18 +48,22 @@ buttons.forEach(button => button.addEventListener('touchend', function() {
 
 function add (a, b) {
     display.textContent = a + b;
+    answer = a + b;
 }
 
 function subtract (a, b) {
     display.textContent = a - b;
+    answer = a - b;
 }
 
 function multiply (a, b) {
     display.textContent = a * b;
+    answer = a * b;
 }
 
 function divide (a, b) {
     display.textContent = a / b;
+    answer = a / b;
 }
 
 // iss1 - If you enter 4 + 5 = 9 should be displayed. If you
