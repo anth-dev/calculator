@@ -9,11 +9,16 @@ buttons.forEach(button => button.addEventListener('mousedown', function() {
     button.classList.add("down");
     if (this.textContent == 'c') {
         clearDisplay();
+        operator = '';
     } else if (this.classList.contains("operator") == true) {
+        if (operator) {
+            console.log('We have an operator over here!');
+        } else {
         a = input.join('');
         // store operator in operator variable
         operator = this.dataset.operation;
         clearDisplay();
+        }
     } else if (this.classList.contains("equals") == true) {
         b = input.join('');
         operate(a, b, operator);
@@ -51,23 +56,32 @@ function divide (a, b) {
     display.textContent = a / b;
 }
 
-// iss1 - If you enter 4 + 5 the display should say 9. Then when
-// another operator is pushed it should use the previous answer
-// for 'a' allowing the chaining of operations.
+// iss1 - If you enter 4 + 5 = 9 should be displayed. If you
+// enter 1 + 2 then another operator the answer so far should be
+// displayed and await further input.
+
+// Thoughts on how to implement
+//  - when 1 + 2 is entered and another operator is entered
+//  (maybe run a check the value of the operator variable)
+//  run the operate function and store the answer in 'a'
 
 function operate (a, b, c) {
     switch(c) {
         case 'add':
             add(+a, +b);
+            operator = '';
             break;
         case 'subtract':
             subtract(+a, +b);
+            operator = '';
             break;
         case 'multiply':
             multiply(+a, +b);
+            operator = '';
             break;
         case 'divide':
             divide(+a, +b);
+            operator = '';
             break;
     }
 }
