@@ -16,17 +16,20 @@ buttons.forEach(button => button.addEventListener('mousedown', function() {
             console.log('We have a second operator over here!');
             // operate
             b = input.join('');
+            input = [];
             operate(a, b, operator);
             // display the answer and store in variable 'a'
             a = answer;
         } else {
         a = input.join('');
+        input = [];
         // store operator in operator variable
         operator = this.dataset.operation;
         clearDisplay();
         }
     } else if (this.classList.contains("equals") == true) {
         b = input.join('');
+        input = [];
         operate(a, b, operator);
     } else {
     input.push(this.textContent);
@@ -79,19 +82,15 @@ function operate (a, b, c) {
     switch(c) {
         case 'add':
             add(+a, +b);
-            operator = '';
             break;
         case 'subtract':
             subtract(+a, +b);
-            operator = '';
             break;
         case 'multiply':
             multiply(+a, +b);
-            operator = '';
             break;
         case 'divide':
             divide(+a, +b);
-            operator = '';
             break;
     }
 }
