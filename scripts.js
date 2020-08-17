@@ -10,21 +10,22 @@ buttons.forEach(button => button.addEventListener('mousedown', function() {
     if (this.textContent == 'c') {
         // clear has been selected
         console.log('Clear!');
+
     } else if (this.classList.contains("operator") == true) {
-        if (operator) {
-            console.log('We have a second operator over here!');
-            // second operator has been selected
-        } else {
-            // first operator has been selected
-            console.log('We have an operator here!');
-        }
+        // an operator has been selected
+        console.log('We have an operator here!');
+
     } else if (this.classList.contains("equals") == true) {
         // equals has been selected
         console.log('Equals!');
+
     } else {
-        // numbers are being pushed
+        // numbers are being selected
         console.log('Number');
+        a += this.textContent;
     }
+    // After any button press, update the display.
+    updateDisplay();
 }));
 buttons.forEach(button => button.addEventListener('mouseup', function() {
     button.classList.remove("down");
@@ -72,6 +73,9 @@ function operate (a, b, c) {
     }
 }
 
+function updateDisplay () {
+    console.log('Updating the display!');
+}
 // code below is for jasmine testing
 
 // module.exports = {
