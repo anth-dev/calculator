@@ -1,39 +1,29 @@
-let input = [];
 let buttons = document.querySelectorAll('button');
 let display = document.querySelector('.display');
+
 let a;
 let b;
 let operator;
-let answer;
 
 buttons.forEach(button => button.addEventListener('mousedown', function() {
     button.classList.add("down");
     if (this.textContent == 'c') {
-        clearDisplay();
-        operator = '';
+        // clear has been selected
+        console.log('Clear!');
     } else if (this.classList.contains("operator") == true) {
         if (operator) {
             console.log('We have a second operator over here!');
-            // operate
-            b = input.join('');
-            input = [];
-            operate(a, b, operator);
-            // display the answer and store in variable 'a'
-            a = answer;
+            // second operator has been selected
         } else {
-        a = input.join('');
-        input = [];
-        // store operator in operator variable
-        operator = this.dataset.operation;
-        clearDisplay();
+            // first operator has been selected
+            console.log('We have an operator here!');
         }
     } else if (this.classList.contains("equals") == true) {
-        b = input.join('');
-        input = [];
-        operate(a, b, operator);
+        // equals has been selected
+        console.log('Equals!');
     } else {
-    input.push(this.textContent);
-    updateDisplay(input);
+        // numbers are being pushed
+        console.log('Number');
     }
 }));
 buttons.forEach(button => button.addEventListener('mouseup', function() {
@@ -50,33 +40,20 @@ buttons.forEach(button => button.addEventListener('touchend', function() {
 }));
 
 function add (a, b) {
-    display.textContent = a + b;
-    answer = a + b;
+
 }
 
 function subtract (a, b) {
-    display.textContent = a - b;
-    answer = a - b;
+
 }
 
 function multiply (a, b) {
-    display.textContent = a * b;
-    answer = a * b;
+
 }
 
 function divide (a, b) {
-    display.textContent = a / b;
-    answer = a / b;
+
 }
-
-// iss1 - If you enter 4 + 5 = 9 should be displayed. If you
-// enter 1 + 2 then another operator the answer so far should be
-// displayed and await further input.
-
-// Thoughts on how to implement
-//  - when 1 + 2 is entered and another operator is entered
-//  (maybe run a check the value of the operator variable)
-//  run the operate function and store the answer in 'a'
 
 function operate (a, b, c) {
     switch(c) {
@@ -93,16 +70,6 @@ function operate (a, b, c) {
             divide(+a, +b);
             break;
     }
-}
-
-function updateDisplay (array) {
-    let content = array.join('');
-    display.textContent = content;
-}
-
-function clearDisplay () {
-    input = [];
-    display.textContent = '0';
 }
 
 // code below is for jasmine testing
