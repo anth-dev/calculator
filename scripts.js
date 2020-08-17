@@ -1,9 +1,9 @@
 let buttons = document.querySelectorAll('button');
 let display = document.querySelector('.display');
 
-let a;
-let b;
-let operator;
+let a = '';
+let b = '';
+let operator = '';
 
 buttons.forEach(button => button.addEventListener('mousedown', function() {
     button.classList.add("down");
