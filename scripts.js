@@ -20,12 +20,11 @@ buttons.forEach(button => button.addEventListener('mousedown', function() {
         console.log('Equals!');
 
     } else {
-        // numbers are being selected
+        // numbers are being selected without a selected operator
         console.log('Number');
         a += this.textContent;
+        updateDisplay(a);
     }
-    // After any button press, update the display.
-    updateDisplay();
 }));
 buttons.forEach(button => button.addEventListener('mouseup', function() {
     button.classList.remove("down");
@@ -73,8 +72,9 @@ function operate (a, b, c) {
     }
 }
 
-function updateDisplay () {
+function updateDisplay (content) {
     console.log('Updating the display!');
+    display.textContent = content;
 }
 // code below is for jasmine testing
 
