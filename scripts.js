@@ -10,7 +10,10 @@ buttons.forEach(button => button.addEventListener('mousedown', function() {
     if (this.textContent == 'c') {
         // clear has been selected
         console.log('Clear!');
-
+        a = '';
+        b = '';
+        operator = '';
+        updateDisplay('0');
     } else if (this.classList.contains("operator") == true) {
         // an operator has been selected
         console.log('We have an operator here!');
@@ -20,7 +23,7 @@ buttons.forEach(button => button.addEventListener('mousedown', function() {
         console.log('Equals!');
 
     } else {
-        // numbers are being selected without a selected operator
+        // numbers are being inputted without having an operator selected
         console.log('Number');
         a += this.textContent;
         updateDisplay(a);
