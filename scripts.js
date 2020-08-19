@@ -13,7 +13,7 @@ buttons.forEach(button => button.addEventListener('mousedown', function() {
         a = '';
         b = '';
         operator = '';
-        updateDisplay('0');
+        display.textContent = '0';
     } else if (this.classList.contains("operator") == true) {
         if (operator) {
             // a second operator is being selected
@@ -32,12 +32,12 @@ buttons.forEach(button => button.addEventListener('mousedown', function() {
         // input goes to b if we already have a and an operator
         console.log('We have a and an operator');
         b += this.textContent;
-        updateDisplay(b);
+        display.textContent = b;
     } else {
         // numbers are being inputted without having an operator selected
         console.log('Number');
         a += this.textContent;
-        updateDisplay(a);
+        display.textContent = a;
     }
 }));
 buttons.forEach(button => button.addEventListener('mouseup', function() {
@@ -56,7 +56,7 @@ buttons.forEach(button => button.addEventListener('touchend', function() {
 function add (a, b) {
     console.log('Attempting to add');
     a = a + b;
-    updateDisplay(a);
+    display.textContent = a;
     operator = '';
     b = '';
 }
@@ -90,10 +90,6 @@ function operate (a, b, c) {
     }
 }
 
-function updateDisplay (content) {
-    console.log('Updating the display!');
-    display.textContent = content;
-}
 // code below is for jasmine testing
 
 // module.exports = {
