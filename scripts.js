@@ -53,6 +53,8 @@ buttons.forEach(button => button.addEventListener('touchend', function() {
     button.classList.remove("down");
 }));
 
+// Something is going on here where the variables aren't actually being updated
+// except for the operator variable
 function add (a, b) {
     console.log('Attempting to add');
     a = a + b;
