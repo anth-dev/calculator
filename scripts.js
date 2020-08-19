@@ -28,6 +28,7 @@ buttons.forEach(button => button.addEventListener('mousedown', function() {
         // equals has been selected
         console.log('Equals!');
         operate(a, b, operator);
+        operator = '';
     } else if (a && operator) {
         // input goes to b if we already have a and an operator
         console.log('We have a and an operator');
@@ -53,25 +54,28 @@ buttons.forEach(button => button.addEventListener('touchend', function() {
     button.classList.remove("down");
 }));
 
-// Something is going on here where the variables aren't actually being updated
-// except for the operator variable
-function add (a, b) {
+// These functions used to have the parameters a and b.
+// They were causing scope issues and were not necessary.
+// Chaining operations isn't working if you change operators
+function add () {
     console.log('Attempting to add');
-    a = a + b;
+    a = +a + +b;
     display.textContent = a;
-    operator = '';
     b = '';
 }
 
-function subtract (a, b) {
+function subtract () {
+    console.log('Attempting to subtract');
+    a = +a - +b;
+    display.textContent = a;
+    b = '';
+}
+
+function multiply () {
 
 }
 
-function multiply (a, b) {
-
-}
-
-function divide (a, b) {
+function divide () {
 
 }
 
