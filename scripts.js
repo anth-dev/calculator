@@ -73,11 +73,17 @@ function subtract () {
 }
 
 function multiply () {
-
+    console.log('Attempting to multiply');
+    a = +a * +b;
+    display.textContent = a;
+    b = '';
 }
 
 function divide () {
-
+    console.log('Attempting to divide');
+    a = +a / +b;
+    display.textContent = a;
+    b = '';
 }
 
 function operate (a, b, c) {
