@@ -19,6 +19,7 @@ buttons.forEach(button => button.addEventListener('mousedown', function() {
             // a second operator is being selected
             console.log('An operator has already been selected')
             operate(a, b, operator);
+            operator = this.dataset.operation;
         } else {
         // an operator has been selected
         console.log('We have an operator here!');
