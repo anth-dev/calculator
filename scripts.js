@@ -57,7 +57,6 @@ buttons.forEach(button => button.addEventListener('touchend', function() {
 
 // These functions used to have the parameters a and b.
 // They were causing scope issues and were not necessary.
-// Chaining operations isn't working if you change operators
 function add () {
     console.log('Attempting to add');
     a = +a + +b;
