@@ -9,7 +9,6 @@ buttons.forEach(button => button.addEventListener('mousedown', function() {
     button.classList.add("down");
     if (this.textContent == 'c') {
         // clear has been selected
-        console.log('Clear!');
         a = '';
         b = '';
         operator = '';
@@ -17,28 +16,23 @@ buttons.forEach(button => button.addEventListener('mousedown', function() {
     } else if (this.classList.contains("operator") == true) {
         if (operator) {
             // a second operator is being selected
-            console.log('An operator has already been selected')
             operate(a, b, operator);
             operator = this.dataset.operation;
         } else {
         // an operator has been selected
-        console.log('We have an operator here!');
         operator = this.dataset.operation;
         }
     } else if (this.classList.contains("equals") == true) {
         // equals has been selected
-        console.log('Equals!');
         operate(a, b, operator);
         operator = '';
         a = '';
     } else if (a && operator) {
         // input goes to b if we already have a and an operator
-        console.log('We have a and an operator');
         b += this.textContent;
         display.textContent = b;
     } else {
         // numbers are being inputted without having an operator selected
-        console.log('Number');
         a += this.textContent;
         display.textContent = a;
     }
@@ -59,21 +53,18 @@ buttons.forEach(button => button.addEventListener('touchend', function() {
 // These functions used to have the parameters a and b.
 // They were causing scope issues and were not necessary.
 function add () {
-    console.log('Attempting to add');
     a = +a + +b;
     display.textContent = a;
     b = '';
 }
 
 function subtract () {
-    console.log('Attempting to subtract');
     a = +a - +b;
     display.textContent = a;
     b = '';
 }
 
 function multiply () {
-    console.log('Attempting to multiply');
     a = +a * +b;
     display.textContent = a;
     b = '';
@@ -81,13 +72,11 @@ function multiply () {
 
 function divide () {
     if (b === '0') {
-        console.log('Trying to divide by zero');
         display.textContent = String.raw`(⌐■_■)`;
         alert(String.raw`(⌐■_■) Dividing by zero is not possible.`);
         a = '';
         b = '';
     } else {
-    console.log('Attempting to divide');
     a = +a / +b;
     display.textContent = a;
     b = '';
