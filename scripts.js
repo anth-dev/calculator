@@ -80,10 +80,18 @@ function multiply () {
 }
 
 function divide () {
+    if (b === '0') {
+        console.log('Trying to divide by zero');
+        display.textContent = String.raw`(⌐■_■)`;
+        alert(String.raw`(⌐■_■) Dividing by zero is not possible.`);
+        a = '';
+        b = '';
+    } else {
     console.log('Attempting to divide');
     a = +a / +b;
     display.textContent = a;
     b = '';
+    }
 }
 
 function operate (a, b, c) {
