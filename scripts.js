@@ -30,6 +30,7 @@ buttons.forEach(button => button.addEventListener('mousedown', function() {
         console.log('Equals!');
         operate(a, b, operator);
         operator = '';
+        a = '';
     } else if (a && operator) {
         // input goes to b if we already have a and an operator
         console.log('We have a and an operator');
