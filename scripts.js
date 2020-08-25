@@ -1,5 +1,6 @@
 let buttons = document.querySelectorAll('button');
 let display = document.querySelector('.display');
+let decimalButton = document.querySelector('.decimal');
 
 let a = '';
 let b = '';
@@ -12,29 +13,48 @@ buttons.forEach(button => button.addEventListener('mousedown', function() {
         a = '';
         b = '';
         operator = '';
+        decimalButton.disabled = false;
         display.textContent = '0';
     } else if (this.classList.contains("operator") == true) {
         if (operator) {
             // a second operator is being selected
             operate(a, b, operator);
             operator = this.dataset.operation;
+            decimalButton.disabled = false;
         } else {
         // an operator has been selected
         operator = this.dataset.operation;
+        decimalButton.disabled = false;
         }
     } else if (this.classList.contains("equals") == true) {
         // equals has been selected
         operate(a, b, operator);
         operator = '';
         a = '';
+        decimalButton.disabled = false;
     } else if (a && operator) {
         // input goes to b if we already have a and an operator
         b += this.textContent;
         display.textContent = b;
+        // Detect decimal button press.
+        if (this.textContent == '.') {
+            console.log('We have a decimal here');
+            // Disable the decimal button.
+            decimalButton.disabled = true;
+            decimalButton.classList.remove('down');
+        }
     } else {
+        console.log(this.textContent);
         // numbers are being inputted without having an operator selected
         a += this.textContent;
         display.textContent = a;
+        // Detect decimal button press.
+        if (this.textContent == '.') {
+            console.log('We have a decimal here');
+            // Disable the decimal button.
+            decimalButton.disabled = true;
+            decimalButton.classList.remove('down');
+        }
     }
 }));
 buttons.forEach(button => button.addEventListener('mouseup', function() {
