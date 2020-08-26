@@ -48,7 +48,6 @@ buttons.forEach(button => button.addEventListener('mousedown', function() {
         display.textContent = a;
         // Detect decimal button press.
         if (this.textContent == '.') {
-            console.log('We have a decimal here');
             // Disable the decimal button.
             decimalButton.disabled = true;
             decimalButton.classList.remove('down');
