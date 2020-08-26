@@ -67,6 +67,12 @@ buttons.forEach(button => button.addEventListener('touchend', function() {
     button.classList.remove("down");
 }));
 
+// get keyboard input, add data-keys to html, try to click with .click() events
+window.addEventListener('keydown', function(e) {
+    let button = document.querySelector(`button[data-key="${e.keyCode}"]`);
+    console.log(button);
+});
+
 // These functions used to have the parameters a and b.
 // They were causing scope issues and were not necessary.
 function add () {
