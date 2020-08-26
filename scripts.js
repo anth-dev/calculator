@@ -71,19 +71,19 @@ buttons.forEach(button => button.addEventListener('touchend', function() {
 // They were causing scope issues and were not necessary.
 function add () {
     a = +a + +b;
-    display.textContent = a;
+    trimAndDisplay(a);
     b = '';
 }
 
 function subtract () {
     a = +a - +b;
-    display.textContent = a;
+    trimAndDisplay(a);
     b = '';
 }
 
 function multiply () {
     a = +a * +b;
-    display.textContent = a;
+    trimAndDisplay(a);
     b = '';
 }
 
@@ -95,7 +95,7 @@ function divide () {
         b = '';
     } else {
     a = +a / +b;
-    display.textContent = a;
+    trimAndDisplay(a);
     b = '';
     }
 }
@@ -115,6 +115,11 @@ function operate (a, b, c) {
             divide(+a, +b);
             break;
     }
+}
+
+function trimAndDisplay (inputNumber) {
+    answer = inputNumber.toString();
+    display.textContent = answer.substring(0, 9);
 }
 
 // code below is for jasmine testing
