@@ -38,13 +38,11 @@ buttons.forEach(button => button.addEventListener('mousedown', function() {
         display.textContent = b;
         // Detect decimal button press.
         if (this.textContent == '.') {
-            console.log('We have a decimal here');
             // Disable the decimal button.
             decimalButton.disabled = true;
             decimalButton.classList.remove('down');
         }
     } else {
-        console.log(this.textContent);
         // numbers are being inputted without having an operator selected
         a += this.textContent;
         display.textContent = a;
