@@ -6,8 +6,7 @@ let a = '';
 let b = '';
 let operator = '';
 
-buttons.forEach(button => button.addEventListener('mousedown', function() {
-    button.classList.add("down");
+buttons.forEach(button => button.addEventListener('click', function() {
     if (this.textContent == 'c') {
         // clear has been selected
         a = '';
@@ -54,6 +53,9 @@ buttons.forEach(button => button.addEventListener('mousedown', function() {
         }
     }
 }));
+buttons.forEach(button => button.addEventListener('mousedown', function() {
+    button.classList.add("down");
+}));
 buttons.forEach(button => button.addEventListener('mouseup', function() {
     button.classList.remove("down");
 }));
@@ -67,10 +69,11 @@ buttons.forEach(button => button.addEventListener('touchend', function() {
     button.classList.remove("down");
 }));
 
-// get keyboard input, add data-keys to html, try to click with .click() events
+// numpad input
 window.addEventListener('keydown', function(e) {
-    let button = document.querySelector(`button[data-key="${e.keyCode}"]`);
-    console.log(button);
+    const button = document.querySelector(`button[data-key="${e.keyCode}"]`);
+    if (!button) return;
+    button.click();
 });
 
 // These functions used to have the parameters a and b.
