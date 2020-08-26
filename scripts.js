@@ -131,6 +131,9 @@ function trimAndDisplay (inputNumber) {
     display.textContent = answer.substring(0, 9);
 }
 
+console.log('%cThank you for visiting!', 'color: cornflowerblue; font-family: serif; font-size: 2rem');
+console.log('%cI made this calculator with HTML5, CSS3, and JavaScript (ES6). You can view my GitHub at ' + 'www.github.com/anth-dev' + '.', 'font-family: serif; font-size: 1rem');
+
 // code below is for jasmine testing
 
 // module.exports = {
